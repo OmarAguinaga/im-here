@@ -7,6 +7,8 @@ import { AlertModule } from 'ng2-bootstrap';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from 'angularfire2';
+import { ChatRoomsComponent } from './chat-rooms/chat-rooms.component';
+import { HeaderComponent } from './header/header.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBeUHXOQpa2ca4xjHZBQI3yYm19oVrt2zE",
@@ -18,7 +20,9 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatRoomsComponent,
+    HeaderComponent
   ],
   imports: [
     AlertModule.forRoot(),

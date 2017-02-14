@@ -1,0 +1,11 @@
+
+  <div class="row">
+    <div class="chat-room  col-xs-6 col-sm-3">
+      <h3 class="bold">Your Chats</h3>
+      <p class="light"><span class="active glyphicon glyphicon-record"></span>Omar Aguinaga</p>
+      <hr>
+        <p class="light" *ngFor="let room of rooms | async">
+          {{ room.name }}
+        </p>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+.navbar{
+  background-color: white;
+  border-radius: 0;
+  border: none;
+}
+.navbar-default {
+  position: relative;
+  background-color: #F8F8F8;
+  height: 100px;
+}

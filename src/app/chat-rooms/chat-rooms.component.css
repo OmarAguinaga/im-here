@@ -1,0 +1,26 @@
+/*
+.chat-room{
+  position:absolute;
+  left:0%;
+  top:0%;
+  background-color: #34495e;
+  height: 100%;
+}
+*/
+
+.chat-room{
+  position:relative;
+  left:15px;
+  top:-19px;
+  background-color: #34495e;
+  height: 100%;
+}
+
+
+
+hr{
+  margin: 0px -15px 5px;
+  border: 0;
+  border:1px solid #2c3e50;
+}
+
