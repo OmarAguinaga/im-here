@@ -1,0 +1,29 @@
+<button type="button" class="right add-room" (click)="staticModal.show()">
+  <i class="light fa fa-plus-square-o" aria-hidden="true"></i>
+</button>
+
+<div class="modal fade" bsModal #staticModal="bs-modal" 
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Create new Room</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Enter a room name
+        
+        
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Name" #name [(ngModel)]="roomVal">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" (click)="addRoom(name.value); staticModal.hide()">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+        
+      </div>
+    </div>
+  </div>
+</div>

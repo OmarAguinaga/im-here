@@ -6,5 +6,36 @@
 .navbar-default {
   position: relative;
   background-color: #F8F8F8;
-  height: 100px;
 }
+
+img.logo-icon{
+  height: 30px;
+  width: 30px;
+}
+/* Medium screens (640px) 
+@media (min-width: 640px) {
+  html { font-size: 112%; }
+
+  .navbar-brand,
+  .navbar-nav li a  {
+    line-height: 50px;
+    height: 50px;
+    padding-top: 0;
+  }
+
+
+}
+
+
+@media (min-width: 1024px) {
+  html { font-size: 120%; }
+  .navbar-brand,
+  .navbar-nav li a {
+    line-height: 80px;
+    height: 80px;
+    padding-top: 0;
+  }
+
+}
+
+*/
