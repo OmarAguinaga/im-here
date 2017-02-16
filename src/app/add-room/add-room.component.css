@@ -1,0 +1,32 @@
+i{
+  font-size: 1.5em;
+}
+
+i.light{
+  -webkit-text-stroke: 1px #34495e;
+}
+
+
+button.add-room{
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.modal-header{
+  background-color: #2c3e50;
+  border: none;
+}
+
+.modal-content{
+  background-color: #34495e;
+}
+
+button.close{
+  color: white;
+}
+
+.input-group{
+  margin-top: 2em;
+}

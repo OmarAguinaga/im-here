@@ -2,11 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import { AlertModule } from 'ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap';
+import { DropdownModule } from 'ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from 'angularfire2';
+import { ChatRoomsComponent } from './chat-rooms/chat-rooms.component';
+import { HeaderComponent } from './header/header.component';
+import { AddRoomComponent } from './add-room/add-room.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBeUHXOQpa2ca4xjHZBQI3yYm19oVrt2zE",
@@ -18,10 +24,14 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatRoomsComponent,
+    HeaderComponent,
+    AddRoomComponent
   ],
   imports: [
-    AlertModule.forRoot(),
+    DropdownModule.forRoot(),
+    ModalModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule,

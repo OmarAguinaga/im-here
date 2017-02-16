@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+
+html {
+  height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+  font-size: 100%;
+  font-weight: 300;
+}
+
+.bold{
+  font-weight:400;
+}
+
+.light{
+  font-weight: 100;
+}
+
+.right{
+  float: right;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  color: white;             /* sets the text color to white */
+  min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
+  background: #ecf0f1; /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to left, #7f8c8d , #34495e);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to left, #7f8c8d , #34495e); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+p span {
+  padding-right:10px; 
+}
+
+p span.active {
+  color: #16a085;
+}
+
+textarea, input, button { outline: none; }
+
+/*Loading*/
+
