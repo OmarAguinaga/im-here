@@ -1,42 +1,54 @@
-/*
-.chat-room{
-  position:absolute;
-  left:0%;
-  top:0%;
-  background-color: #34495e;
-  height: 100%;
-}
-*/
-
 .chat-room{
   position:relative;
   left:15px;
-  top:-19px;
-  background-color: #34495e;
-  height: calc(100vh - 50px);
-/*  z-index: -1;*/
+  background-color: rgba(236, 240, 241,0.2);
+  height: 100vh;
 }
 
+div.logo{
+  height: 90px;
+}
 
+div.logo > img{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  display: block;
+}
 
 hr{
   margin: 0px -15px 5px;
   border: 0;
-  border:1px solid #2c3e50;
+  border:1px solid rgba(236, 240, 241,0.2);
 }
-
-i{
-  font-size: 1.5em;
-}
-
-i.light{
-  -webkit-text-stroke: 1px #34495e;
-}
-
 
 button.add-room{
   padding: 0;
   border: none;
   background: none;
   cursor: pointer;
+}
+
+div.chat-room-line{
+  padding: .5em;
+  margin-left: -15px;
+  padding-left: 15px;
+}
+div.chat-room-line:hover{
+  background: #D66D75; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #D66D75 , #e2a199); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #D66D75 , #e2a199); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+div a{
+  color: white;
+  text-decoration: none;
+}
+
+.info{ 
+  display: none;
+}
+.show-info:hover .info{
+  display : block;
+  font-size: .8em;
 }

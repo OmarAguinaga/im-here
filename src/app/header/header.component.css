@@ -2,6 +2,7 @@
   background-color: white;
   border-radius: 0;
   border: none;
+  z-index: 500;
 }
 .navbar-default {
   position: relative;
