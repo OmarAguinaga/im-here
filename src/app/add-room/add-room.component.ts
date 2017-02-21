@@ -1,31 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods,FirebaseListObservable } from 'angularfire2';
-
+import {RoomsService} from '../rooms.service';
 
 
 @Component({
   selector: 'app-add-room',
   templateUrl: './add-room.component.html',
-  styleUrls: ['./add-room.component.css']
+  styleUrls: ['./add-room.component.css'],
+  providers: [RoomsService]
 })
 export class AddRoomComponent implements OnInit {
 
-  rooms: FirebaseListObservable<any>;
-  roomVal: string = '';
-  
-  constructor(af: AngularFire) {
-    this.rooms = af.database.list('/rooms');
+  constructor(private roomsService: RoomsService) {
+    
   }
-  addRoom(roomName: string, description: string) {
-    this.rooms.push({ creator: 'Somebody', 
-                     description: description || 'About something',
-                     name: roomName,
-                     tags: 'tag2',
-                     timestamp: '1234567283'
-                    });
-    this.roomVal = '';
-  }
-
 
   ngOnInit() {
   }
