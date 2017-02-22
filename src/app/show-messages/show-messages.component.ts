@@ -4,8 +4,7 @@ import {RoomsService} from 'app/services/rooms.service';
 @Component({
   selector: 'app-show-messages',
   templateUrl: './show-messages.component.html',
-  styleUrls: ['./show-messages.component.css'],
-  providers: [RoomsService]
+  styleUrls: ['./show-messages.component.css']
 })
 export class ShowMessagesComponent implements OnInit {
 

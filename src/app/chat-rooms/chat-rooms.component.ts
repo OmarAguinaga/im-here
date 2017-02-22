@@ -5,13 +5,12 @@ import { Component, OnInit } from '@angular/core';
 * And FirebaseListObservable allows us to fetch the chat messages.
 */
 import { AngularFire, AuthProviders, AuthMethods,FirebaseListObservable } from 'angularfire2';
-import {RoomsService} from 'app/services/rooms.service';
 
+import {RoomsService} from 'app/services/rooms.service';
 @Component({
   selector: 'app-chat-rooms',
   templateUrl: './chat-rooms.component.html',
-  styleUrls: ['./chat-rooms.component.css'],
-  providers: [RoomsService]
+  styleUrls: ['./chat-rooms.component.css']
 })
 export class ChatRoomsComponent implements OnInit {
 

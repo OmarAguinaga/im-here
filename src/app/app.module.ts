@@ -15,6 +15,9 @@ import { HeaderComponent } from './header/header.component';
 import { AddRoomComponent } from './add-room/add-room.component';
 import { ShowMessagesComponent } from './show-messages/show-messages.component';
 
+
+import {RoomsService} from 'app/services/rooms.service';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBeUHXOQpa2ca4xjHZBQI3yYm19oVrt2zE",
   authDomain: "im-here-12187.firebaseapp.com",
@@ -39,7 +42,9 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [RoomsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

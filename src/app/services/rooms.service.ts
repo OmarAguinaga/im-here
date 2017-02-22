@@ -15,12 +15,6 @@ export class RoomsService {
   * @desc This helps fetch the messages from Firebase
   * @Type FirebaseListObservable 
   **/
-  messages: FirebaseListObservable<any>;
-
-  /**
-  * @desc This helps fetch the messages from Firebase
-  * @Type FirebaseListObservable 
-  **/
   messagesById: FirebaseListObservable<any>;
 
   /**
@@ -32,12 +26,15 @@ export class RoomsService {
 
   timestamp;
 
+  /**
+   * @description stores room roomID
+   * @type Subject
+   */
   roomId: Subject<any>;
-  id: string;
+  roomName: string = '';
 
   constructor(af: AngularFire) {
     this.rooms = af.database.list('/rooms');
-    //this.messages = af.database.list('/messages');
 
     this.roomId = new Subject();
     this.messagesById = af.database.list('/messages', {
@@ -46,7 +43,6 @@ export class RoomsService {
         equalTo: this.roomId
       }
     });
-    this.messages = af.database.list('/messages');
   }
 
   getRooms(){
@@ -65,12 +61,9 @@ export class RoomsService {
     this.descriptionValue = '';
   }
 
-  getMessages(){
-    return this.messages;
-  }
-
-  getMessagesById(id:string){
-     this.roomId.next(id); 
+  setCurrentRoom(room){
+     this.roomId.next(room.$key); 
+     this.roomName = room.name;
   }
 
 }

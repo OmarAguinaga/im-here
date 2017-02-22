@@ -1,4 +1,12 @@
-<div *ngFor="let message of roomsService.messagesById | async">
+<div>
+  <div class="col-xs-6 col-sm-9">
+    <h2 class="light chat-title">{{roomsService.roomName}}</h2>
+  </div>
+</div>
+
+  
+  
+<div *ngFor="let message of roomsService.messagesById | async" class="w3-animate-right">
   <div class="chat-room  col-xs-6 col-sm-2">
   </div>
   <div class="chat-room  col-xs-6 col-sm-7">
@@ -7,13 +15,14 @@
         <img class="profile" src="./assets/profile.png">
       </div>
       <div>
-        <p>
-          {{message.content}}
+        <p class="bold user-name">
+          {{message.username}}
+          <small class="light time">
+            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>{{message.sent | date:'shortTime'}}
+          </small>
         </p>
         <p>
-          <small>
-        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>10:30PM
-      </small>
+          {{message.content}}
         </p>
       </div>
     </div>

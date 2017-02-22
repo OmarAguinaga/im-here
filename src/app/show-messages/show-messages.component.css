@@ -23,3 +23,22 @@
 .my-profile{
     border: 8px solid rgba(255,255,255, .4);
 }
+
+p.user-name{
+    font-size: 1.1em;
+}
+
+.time{
+    font-size:.8em;
+    padding-left: 1em;
+}
+
+h2.chat-title{
+    padding: 1em 0em 1.5em 17%;
+}
+
+h2 > i.light{
+  -webkit-text-stroke: 3px #de8680;
+}
+
+

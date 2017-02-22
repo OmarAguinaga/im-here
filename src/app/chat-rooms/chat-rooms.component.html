@@ -8,7 +8,7 @@
     <hr>
     <p class="light"> CHAT ROOMS <app-add-room></app-add-room></p>
 
-    <a *ngFor="let room of roomsService.getRooms() | async" (click)='roomsService.getMessagesById(room.$key)'>
+    <a *ngFor="let room of roomsService.getRooms() | async" (click)='roomsService.setCurrentRoom(room)'>
       <div class="show-info chat-room-line">
         <i class="light fa fa-hashtag" aria-hidden="true"></i> {{ room.name }}
         <div class="info"> 
