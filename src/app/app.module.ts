@@ -13,6 +13,7 @@ import { AngularFireModule } from 'angularfire2';
 import { ChatRoomsComponent } from './chat-rooms/chat-rooms.component';
 import { HeaderComponent } from './header/header.component';
 import { AddRoomComponent } from './add-room/add-room.component';
+import { ShowMessagesComponent } from './show-messages/show-messages.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBeUHXOQpa2ca4xjHZBQI3yYm19oVrt2zE",
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     AppComponent,
     ChatRoomsComponent,
     HeaderComponent,
-    AddRoomComponent
+    AddRoomComponent,
+    ShowMessagesComponent
   ],
   imports: [
     DropdownModule.forRoot(),

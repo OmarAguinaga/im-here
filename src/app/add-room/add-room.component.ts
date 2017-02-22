@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods,FirebaseListObservable } from 'angularfire2';
-import {RoomsService} from '../rooms.service';
+import {RoomsService} from 'app/services/rooms.service';
 
 
 @Component({
@@ -11,7 +11,7 @@ import {RoomsService} from '../rooms.service';
 })
 export class AddRoomComponent implements OnInit {
 
-  constructor(private roomsService: RoomsService) {
+  constructor(public roomsService: RoomsService) {
     
   }
 

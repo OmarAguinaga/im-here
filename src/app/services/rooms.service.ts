@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods,FirebaseListObservable } from 'angularfire2';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class RoomsService {
@@ -11,6 +12,18 @@ export class RoomsService {
   rooms: FirebaseListObservable<any>;
 
   /**
+  * @desc This helps fetch the messages from Firebase
+  * @Type FirebaseListObservable 
+  **/
+  messages: FirebaseListObservable<any>;
+
+  /**
+  * @desc This helps fetch the messages from Firebase
+  * @Type FirebaseListObservable 
+  **/
+  messagesById: FirebaseListObservable<any>;
+
+  /**
    * @description variables fro clearing immput in addRoom()
    * @type string
    */
@@ -19,8 +32,21 @@ export class RoomsService {
 
   timestamp;
 
+  roomId: Subject<any>;
+  id: string;
+
   constructor(af: AngularFire) {
     this.rooms = af.database.list('/rooms');
+    //this.messages = af.database.list('/messages');
+
+    this.roomId = new Subject();
+    this.messagesById = af.database.list('/messages', {
+      query: {
+        orderByChild: 'roomID',
+        equalTo: this.roomId
+      }
+    });
+    this.messages = af.database.list('/messages');
   }
 
   getRooms(){
@@ -37,6 +63,14 @@ export class RoomsService {
                     });
     this.roomValue = '';
     this.descriptionValue = '';
+  }
+
+  getMessages(){
+    return this.messages;
+  }
+
+  getMessagesById(id:string){
+     this.roomId.next(id); 
   }
 
 }

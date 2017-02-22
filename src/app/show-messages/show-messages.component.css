@@ -1,0 +1,25 @@
+.message{
+    margin: 10px;
+    float: right; 
+    background: #D66D75; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #D66D75 , #e2a199); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #D66D75 , #e2a199); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+    border: none;
+    color: white;
+    width: 100%;
+}
+
+
+.profile{
+    object-fit: cover;
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    float: left;
+    margin: 5px 15px 5px 5px;
+    border: 8px solid rgba(214,109,117, .4);
+}
+
+.my-profile{
+    border: 8px solid rgba(255,255,255, .4);
+}

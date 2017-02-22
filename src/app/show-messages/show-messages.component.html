@@ -1,0 +1,58 @@
+<div *ngFor="let message of roomsService.messagesById | async">
+  <div class="chat-room  col-xs-6 col-sm-2">
+  </div>
+  <div class="chat-room  col-xs-6 col-sm-7">
+    <div class="alert alert-success message">
+      <div>
+        <img class="profile" src="./assets/profile.png">
+      </div>
+      <div>
+        <p>
+          {{message.content}}
+        </p>
+        <p>
+          <small>
+        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>10:30PM
+      </small>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!--
+  <div class="alert alert-success message">
+    <div>
+      <img class=" my-profile profile" src="./assets/my-profile.png">
+    </div>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet onsectetur adipisicing eli dolor sit amet onsectetur adipisicing eli
+      </p>
+      <p>
+        <small>
+        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>10:30PM
+      </small>
+      </p>
+    </div>
+  </div>
+
+  <div class="alert alert-success message">
+    <div>
+      <img class="profile" src="./assets/profile.png">
+    </div>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, conuptatem impedit quo consectetur fugit inventore laborum dolorum, laudantium illo.
+      </p>
+      <p>
+        <small>
+        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>10:30PM
+      </small>
+      </p>
+    </div>
+  </div>
+  -->
