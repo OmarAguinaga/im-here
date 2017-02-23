@@ -1,4 +1,8 @@
-<div class="row">
+<div class="row" *ngIf="roomsService.name">
 <app-chat-rooms></app-chat-rooms>
 <app-show-messages></app-show-messages>
+</div>
+
+<div class="row" *ngIf="!roomsService.name">
+    <app-login></app-login>
 </div>

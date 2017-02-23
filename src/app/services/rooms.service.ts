@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods,FirebaseListObservable } from 'angularfire2';
+import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
@@ -33,7 +33,10 @@ export class RoomsService {
   roomId: Subject<any>;
   roomName: string = '';
 
-  constructor(af: AngularFire) {
+  name: any;
+  displayName: String;
+
+  constructor(public af: AngularFire) {
     this.rooms = af.database.list('/rooms');
 
     this.roomId = new Subject();
@@ -43,27 +46,62 @@ export class RoomsService {
         equalTo: this.roomId
       }
     });
+    this.af.auth.subscribe(auth => {
+      if (auth) {
+        this.name = auth;
+      }
+    });
   }
 
-  getRooms(){
+  getRooms() {
     return this.rooms;
   }
 
   addRoom(roomName: string, description: string) {
-    this.timestamp =  new Date().getTime();
-    this.rooms.push({ creator: 'Somebody', 
-                     description: description || 'About something',
-                     name: roomName,
-                     tags: 'tag2',
-                     timestamp: this.timestamp
-                    });
+    this.timestamp = new Date().getTime();
+    this.rooms.push({
+      creator: 'Somebody',
+      description: description || 'About something',
+      name: roomName,
+      tags: 'tag2',
+      timestamp: this.timestamp
+    });
     this.roomValue = '';
     this.descriptionValue = '';
   }
 
-  setCurrentRoom(room){
-     this.roomId.next(room.$key); 
-     this.roomName = room.name;
+  setCurrentRoom(room) {
+    this.roomId.next(room.$key);
+    this.roomName = room.name;
   }
 
+  /**
+   * @description Authentication methods: FacebookLogin / AnonymusLogin / login
+   */
+  FacebookLogin() {
+    this.af.auth.login({
+      provider: AuthProviders.Facebook,
+      method: AuthMethods.Popup,
+    });
+  }
+
+  AnonymusLogin() {
+    this.af.auth.login({
+      provider: AuthProviders.Anonymous,
+      method: AuthMethods.Anonymous,
+    });
+  }
+
+  logout() {
+    this.af.auth.logout();
+    this.name = null;
+  }
+
+  getName() {
+    if (this.name.auth.displayName) {
+      return this.name.auth.displayName;
+    }else{
+      return 'Guest';
+    }
+  }
 }

@@ -1,0 +1,14 @@
+
+  <!---->
+
+ <div class="col-xs-6 col-sm-12  " *ngIf="!roomsService.name">
+    <div class="logo"><img align='midle' class="login" src="./assets/chatty.svg"></div>
+    <div class="login-buttons button-h">
+      <button class="login-btn btn btn-primary" (click)="roomsService.FacebookLogin()" >Login With Facebook</button>
+      <button class="login-btn btn btn-default" (click)="roomsService.AnonymusLogin()" >Login Anonymusly</button>
+    </div>
+  </div>
+
+  <button class="light logout-btn btn btn-default" (click)="roomsService.logout()" *ngIf="roomsService.name">
+    Sign Out
+  </button>

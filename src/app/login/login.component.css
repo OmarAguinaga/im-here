@@ -1,0 +1,36 @@
+img.login{
+    position: fixed; /* or absolute */
+    top: 30vh;
+    left: calc(50vw - 7em);
+    width: 14em;
+}
+
+div.login-buttons{
+    position: fixed;  /*or absolute */
+    top: 50vh;
+}
+
+div.button-h{
+    left: calc(50vw - 210px);
+}
+
+button.login-btn{
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+button.logout-btn{
+    margin: 10px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+ 
+@media all and (max-width: 480px) { 
+    div.button-h{
+        left: calc(50vw - 110px);
+    }
+}

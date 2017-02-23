@@ -1,6 +1,5 @@
 .chat-room{
   position:relative;
-  left:15px;
   background-color: rgba(236, 240, 241,0.2);
   height: 100vh;
 }

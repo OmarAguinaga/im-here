@@ -18,10 +18,6 @@ export class ChatRoomsComponent implements OnInit {
     
   }
 
-  chatRoomClicked(room){
-    console.log(room);
-  }
-
   ngOnInit() {
   }
 
