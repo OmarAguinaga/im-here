@@ -23,14 +23,14 @@
           <label class="light" for="RoomName">Room Name</label>
 
           <!-- #3 -->
-          <input type="text" class="form-control" #name [(ngModel)]="roomValue" >
+          <input type="text" class="form-control" #name [(ngModel)]="roomsService.roomValue" >
         </div>
 
         <div class="form-group">
           <label class="light" for="RoomDescription">Room Description</label>
 
           <!-- #4 -->
-          <input type="text" class="form-control" #description [(ngModel)]="descriptionValue">
+          <input type="text" class="form-control" #description [(ngModel)]="roomsService.descriptionValue">
         </div>
 
         <!-- #5 -->

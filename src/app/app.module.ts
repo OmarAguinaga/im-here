@@ -18,6 +18,7 @@ import { ShowMessagesComponent } from './show-messages/show-messages.component';
 
 import {RoomsService} from 'app/services/rooms.service';
 import { LoginComponent } from './login/login.component';
+import { SendMessagesComponent } from './send-messages/send-messages.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBeUHXOQpa2ca4xjHZBQI3yYm19oVrt2zE",
@@ -34,7 +35,8 @@ export const firebaseConfig = {
     HeaderComponent,
     AddRoomComponent,
     ShowMessagesComponent,
-    LoginComponent
+    LoginComponent,
+    SendMessagesComponent
   ],
   imports: [
     DropdownModule.forRoot(),

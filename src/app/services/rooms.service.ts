@@ -18,11 +18,18 @@ export class RoomsService {
   messagesById: FirebaseListObservable<any>;
 
   /**
+  * @desc This helps fetch the messages from Firebase
+  * @Type FirebaseListObservable 
+  **/
+  messages: FirebaseListObservable<any>;
+
+  /**
    * @description variables fro clearing immput in addRoom()
    * @type string
    */
   roomValue: string = '';
   descriptionValue: string = '';
+  messageValue: string = '';
 
   timestamp;
 
@@ -32,6 +39,7 @@ export class RoomsService {
    */
   roomId: Subject<any>;
   roomName: string = '';
+  actualRoomID: string = '';
 
   name: any;
   displayName: String;
@@ -43,13 +51,16 @@ export class RoomsService {
     this.messagesById = af.database.list('/messages', {
       query: {
         orderByChild: 'roomID',
-        equalTo: this.roomId
+        equalTo: this.roomId,
       }
     });
     this.af.auth.subscribe(auth => {
       if (auth) {
         this.name = auth;
       }
+    });
+
+    this.messages = af.database.list('/messages', {
     });
   }
 
@@ -73,6 +84,7 @@ export class RoomsService {
   setCurrentRoom(room) {
     this.roomId.next(room.$key);
     this.roomName = room.name;
+    this.actualRoomID = room.$key;
   }
 
   /**
@@ -103,5 +115,17 @@ export class RoomsService {
     }else{
       return 'Guest';
     }
+  }
+
+  sendMessage(message: string) {
+      this.timestamp = new Date().getTime();
+      
+      this.messages.push({ 
+          content: message, 
+          roomID: this.actualRoomID,
+          sent: this.timestamp,
+          username: this.name.facebook.displayName
+        });
+      this.messageValue = '';
   }
 }

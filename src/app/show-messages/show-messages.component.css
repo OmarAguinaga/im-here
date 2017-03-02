@@ -9,7 +9,15 @@
     width: 100%;
 }
 
+.show-messages{
+    height: 90vh;
+    overflow-y: scroll;
+    max-height:90vh;
+}
 
+::-webkit-scrollbar { 
+    display: none; 
+}
 .profile{
     object-fit: cover;
     width:70px;
@@ -40,5 +48,6 @@ h2.chat-title{
 h2 > i.light{
   -webkit-text-stroke: 3px #de8680;
 }
+
 
 

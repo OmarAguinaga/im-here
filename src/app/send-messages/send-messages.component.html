@@ -1,0 +1,11 @@
+
+
+<div class="send" *ngIf="roomsService.roomName">
+    <div class="input-group">
+      <input type="text" class="form-control" #message [(ngModel)]="roomsService.messageValue" 
+                                                        (keyup.enter)='roomsService.sendMessage(message.value)'>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" (click) = 'roomsService.sendMessage(message.value)'>Send!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.send -->
